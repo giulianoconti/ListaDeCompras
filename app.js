@@ -15,7 +15,7 @@ const submitCategory = () => {
             <p id="p${idCategory}"></p>
             <input id="input${idCategory}" type="text" placeholder="Ingrese Producto...">
             <input class="inputSubmit inputAqua" type="submit" value="Cargar" onclick="submitProduct('${idCategory}')">
-            <input class="inputSubmit inputAqua" type="submit" value="Eliminar" onclick="deleteCategory('${idCategory}')">
+            <input class="inputSubmit inputAqua" type="submit" value="Eliminar Categoria" onclick="deleteCategory('${idCategory}')">
         </div>
     `
         idCategory += 1;
