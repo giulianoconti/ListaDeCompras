@@ -1,10 +1,20 @@
 const app = document.getElementById('app');
 let inputPrincipal = document.getElementById('inputPrincipal');
 
+document.body.addEventListener('keypress', function(e) {
+
+    let key = (document.all) ? e.keyCode : e.which;
+    if (key === 13) {
+        if (inputPrincipal.value !== '') {
+            inputPrincipal.addEventListener('keypress', submitCategory());
+        } else {
+            submitProduct(nroDeInput);
+        }
+    }
+})
+
 let idCategory = 1;
 const submitCategory = () => {
-
-    inputPrincipal = document.getElementById('inputPrincipal');
 
     if (inputPrincipal.value === '') {
         console.log('input vacio');
@@ -13,11 +23,12 @@ const submitCategory = () => {
          <div class="container" id="cat${idCategory}">
             <h4>${inputPrincipal.value.toUpperCase()}:</h4>
             <p id="p${idCategory}"></p>
-            <input id="input${idCategory}" type="text" placeholder="Ingrese Producto...">
-            <input class="inputSubmit inputAqua" type="submit" value="Cargar Producto" onclick="submitProduct('${idCategory}')">
-            <input class="inputSubmit inputAqua" type="submit" value="Eliminar Categoria" onclick="deleteCategory('${idCategory}')">
+            <input id="input${idCategory}" type="text" placeholder="Ingrese Producto..." onclick="actualizarIdInput(${idCategory})">
+            <input class="inputSubmit inputAqua" type="submit" value="Cargar Producto" onclick="submitProduct(${idCategory})">
+            <input class="inputSubmit inputAqua" type="submit" value="Eliminar Categoria" onclick="deleteCategory(${idCategory})">
         </div>
         `
+        inputPrincipal.value = '';
         document.getElementById('inputPrincipal').focus();
         idCategory += 1;
     }
@@ -34,13 +45,14 @@ const submitProduct = event => {
         const node = document.createElement("p");
         node.setAttribute('onclick', `deleteProduct(${idProduct})`);
         node.setAttribute('id', `prod${idProduct}`);
-        const textnode = document.createTextNode('X  ●' + text);
+        const textnode = document.createTextNode('❌  ●' + text);
         node.appendChild(textnode);
         document.getElementById(`p${event}`).appendChild(node);
 
         document.getElementById(`input${event}`).value = '';
 
         document.getElementById(`input${event}`).focus();
+        document.getElementById(`prod${idProduct}`).scrollIntoView({block: "center", behavior: "smooth"});
         idProduct += 1;
     }
 }
@@ -51,4 +63,9 @@ const deleteCategory = event => {
 
 const deleteProduct = event => {
     document.getElementById(`prod${event}`).remove();
+}
+
+let nroDeInput = 0;
+function actualizarIdInput(e) {
+    nroDeInput = e
 }
