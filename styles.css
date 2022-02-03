@@ -36,3 +36,8 @@ p {
 p p {
     margin-left: 0;
 }
+
+footer {
+    width: 100%;
+    height: 500px;
+}
