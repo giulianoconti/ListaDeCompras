@@ -52,7 +52,7 @@ const submitProduct = event => {
         document.getElementById(`input${event}`).value = '';
 
         document.getElementById(`input${event}`).focus();
-        document.getElementById(`prod${idProduct}`).scrollIntoView({block: "center", behavior: "smooth"});
+        document.getElementById(`prod${idProduct}`).scrollIntoView({block: "start", behavior: "auto"});
         idProduct += 1;
     }
 }
