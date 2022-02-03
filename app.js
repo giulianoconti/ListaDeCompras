@@ -19,15 +19,15 @@ const submitCategory = () => {
     if (inputPrincipal.value === '') {
         console.log('input vacio');
     } else {
-        app.innerHTML += `
-         <div class="container" id="cat${idCategory}">
-            <h4>${inputPrincipal.value.toUpperCase()}:</h4>
-            <p id="p${idCategory}"></p>
-            <input id="input${idCategory}" type="text" placeholder="Ingrese Producto..." onclick="actualizarIdInput(${idCategory})">
-            <input class="inputSubmit inputAqua" type="submit" value="Cargar Producto" onclick="submitProduct(${idCategory})">
-            <input class="inputSubmit inputAqua" type="submit" value="Eliminar Categoria" onclick="deleteCategory(${idCategory})">
-        </div>
-        `
+        app.insertAdjacentHTML('beforeend', `
+        <div class="container" id="cat${idCategory}">
+           <h4>${inputPrincipal.value.toUpperCase()}:</h4>
+           <p id="p${idCategory}"></p>
+           <input id="input${idCategory}" type="text" placeholder="Ingrese Producto..." onclick="actualizarIdInput(${idCategory})">
+           <input class="inputSubmit inputAqua" type="submit" value="Cargar Producto" onclick="submitProduct(${idCategory})">
+           <input class="inputSubmit inputAqua" type="submit" value="Eliminar Categoria" onclick="deleteCategory(${idCategory})">
+       </div>
+       `);
         inputPrincipal.value = '';
         document.getElementById('inputPrincipal').focus();
         idCategory += 1;

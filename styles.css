@@ -1,10 +1,10 @@
 body {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     margin: 0;
 }
 
 .container {
-    border-top: 5px solid #000000;
+    border-top: 5px solid rgb(0, 0, 0);
     padding: 5px;
 }
 
@@ -13,13 +13,13 @@ input {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(205, 205, 205);
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: blanchedalmond;
+    background-color: rgb(255, 235, 205);
 }
 .inputAqua {
-    background-color: aquamarine;
+    background-color: rgb(125, 255, 210);
 }
 .inputSubmit {
     width: 49%;
