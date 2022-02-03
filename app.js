@@ -17,7 +17,8 @@ const submitCategory = () => {
             <input class="inputSubmit inputAqua" type="submit" value="Cargar Producto" onclick="submitProduct('${idCategory}')">
             <input class="inputSubmit inputAqua" type="submit" value="Eliminar Categoria" onclick="deleteCategory('${idCategory}')">
         </div>
-    `
+        `
+        document.getElementById('inputPrincipal').focus();
         idCategory += 1;
     }
 }
@@ -38,6 +39,8 @@ const submitProduct = event => {
         document.getElementById(`p${event}`).appendChild(node);
 
         document.getElementById(`input${event}`).value = '';
+
+        document.getElementById(`input${event}`).focus();
         idProduct += 1;
     }
 }
