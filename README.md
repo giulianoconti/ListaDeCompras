@@ -1,2 +1,2 @@
 # ListaDeCompras
-https://giuliannt.github.io/ListaDeCompras/
+https://giulianoconti.github.io/ListaDeCompras/
